@@ -8,17 +8,17 @@ import { stories } from '../stories';
   styleUrls: ['./story-details.component.css']
 })
 export class StoryDetailsComponent implements OnInit {
-  story;
+  story: { id: number; description: string; };
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.story = stories[+params.get('storyId')];
-    })
+    });
   }
 
-  storylist(){
-    this.router.navigateByUrl('/storylist')
+  storylist() {
+    this.router.navigateByUrl('/storylist');
   }
 }
