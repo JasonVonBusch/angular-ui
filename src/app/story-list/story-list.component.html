@@ -1,0 +1,18 @@
+<h2>Stories</h2>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
+<div *ngFor="let story of stories; index as storyId">
+  <h3>
+    <a [title]="story.id + ' details'" [routerLink]="['/stories', storyId]">{{story.id}}</a>
+  </h3>
+  <p *ngIf="story.description">
+    Description: {{story.description}}
+  </p>
+  <button (click)="details(story.id)">Details</button>
+  <button (click)="share(story.id)">Share</button>
+</div>
