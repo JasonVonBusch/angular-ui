@@ -10,16 +10,20 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { StoryListComponent } from './story-list/story-list.component';
 import { StoryDetailsComponent } from './story-details/story-details.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TaskListComponent } from './task-list/task-list.component';
 
 @NgModule({
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'storylist', component: StoryListComponent },
       { path: 'stories/:storyId', component: StoryDetailsComponent },
+      { path: 'tasklist', component: TaskListComponent },
     ])
   ],
   declarations: [
@@ -29,7 +33,8 @@ import { StoryDetailsComponent } from './story-details/story-details.component';
     ProductAlertsComponent,
     ProductDetailsComponent,
     StoryListComponent,
-    StoryDetailsComponent
+    StoryDetailsComponent,
+    TaskListComponent
   ],
   bootstrap: [ AppComponent ]
 })

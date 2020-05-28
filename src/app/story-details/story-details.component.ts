@@ -9,6 +9,7 @@ import { stories } from '../stories';
 })
 export class StoryDetailsComponent implements OnInit {
   story: { id: number; description: string; };
+  fullName = '';
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
@@ -20,5 +21,13 @@ export class StoryDetailsComponent implements OnInit {
 
   storylist() {
     this.router.navigateByUrl('/storylist');
+  }
+
+  nameChanged(name: string) {
+    this.fullName = name;
+  }
+
+  updateName() {
+    this.fullName = 'George';
   }
 }
